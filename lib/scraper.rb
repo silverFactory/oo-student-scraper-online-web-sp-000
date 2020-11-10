@@ -12,6 +12,7 @@ class Scraper
     students = doc.css(".student-card")
     links = students.xpath("//a")
     urls = links.map { |e|  puts "#{e[:href]}"}
+    puts urls
     # students.each do |s|
     #   puts s.css("div.student-card")
     # end
