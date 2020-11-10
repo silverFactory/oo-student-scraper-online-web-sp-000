@@ -11,7 +11,7 @@ class Scraper
     doc = Nokogiri::HTML(html)
     students = doc.css(".student-card")
     students.each do |s|
-      puts s.css("a").href
+      puts s.css("a")['href']
     end
   end
 
