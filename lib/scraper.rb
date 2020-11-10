@@ -28,7 +28,7 @@ class Scraper
     doc = Nokogiri::HTML(open(profile_url))
     student = {}
     binding.pry
-    if doc.css(".social-icon-container a")
+    if doc.css(".social-icon-container a").length > 0
       doc.css(".social-icon-container a").each do |a|
        #binding.pry
         key = a.attribute("href").text.split(/https:\/\/w*\.?/)[1]
