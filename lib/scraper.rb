@@ -19,7 +19,8 @@ class Scraper
       student[:location] = s.css(".student-location").text
       student[:profile_url] = students.css("a").attribute("href")
     end
-    puts info
+    info
+    binding.pry
   end
 
   def self.scrape_profile_page(profile_url)
