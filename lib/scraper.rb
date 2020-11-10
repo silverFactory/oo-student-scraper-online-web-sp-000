@@ -13,6 +13,7 @@ class Scraper
     html = open(index_url)
     doc = Nokogiri::HTML(html)
     students = doc.css(".student-card")
+    binding.pry
     info = students.map do |s|
       student = {}
       student[:name] = s.css(".student-name").text
