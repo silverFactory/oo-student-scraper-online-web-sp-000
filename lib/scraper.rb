@@ -36,10 +36,10 @@ class Scraper
           key = key.split(/\.com\/\w+/)[0]
           key = key.to_sym
           student[key] = a.attribute("href").text
-        end
+        else
         student[:blog] = a.attribute("href").text
+        end
       end
-    #student[:blog] = "#{profile_url}"
     student[:profile_quote] = doc.css(".profile-quote").text
     student[:bio] = doc.css("p").text
     student
