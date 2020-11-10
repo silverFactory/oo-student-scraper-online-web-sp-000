@@ -4,6 +4,8 @@ require 'pry'
 # s.css(".student-name").text
 # s.css(".student-location").text
 #students.css("a").attribute("href")
+# links = students.xpath("//a")
+# urls = links.map { |e|  puts "#{e[:href]}"}
 
 class Scraper
 
@@ -13,8 +15,7 @@ class Scraper
     students = doc.css(".student-card")
     puts students.css("a").attribute("href")
 
-    # links = students.xpath("//a")
-    # urls = links.map { |e|  puts "#{e[:href]}"}
+
 
   end
 
