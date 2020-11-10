@@ -36,7 +36,7 @@ class Scraper
     end
     #student[:blog] = "#{profile_url}"
     student[:profile_quote] = doc.css(".profile-quote").text
-    student[:bio] = doc.css("div.bio-content.content-holder").text
+    student[:bio] = doc.css("p").text
     student
   #  puts student
   end
