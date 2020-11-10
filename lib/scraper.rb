@@ -10,7 +10,7 @@ class Scraper
     html = open(index_url)
     doc = Nokogiri::HTML(html)
     students = doc.css(".student-card")
-    puts students.first.css("div")
+    puts students.first.css("div . student-card")
     # students.each do |s|
     #   puts s.css("div.student-card")
     # end
