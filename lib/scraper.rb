@@ -37,7 +37,7 @@ class Scraper
           key = key.to_sym
           student[key] = a.attribute("href").text
         else
-        student[:blog] = a.attribute("href").text
+          student[:blog] = a.attribute("href").text
         end
       end
     student[:profile_quote] = doc.css(".profile-quote").text
