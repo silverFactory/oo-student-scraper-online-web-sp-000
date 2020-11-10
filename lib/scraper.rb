@@ -33,6 +33,7 @@ class Scraper
       key = key.to_sym
       student[key] = a.attribute("href").text
     end
+    student[:profile_quote] = doc.css(".profile-quote").text
     puts student
   end
 
