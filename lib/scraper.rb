@@ -34,12 +34,12 @@ class Scraper
       student[key] = a.attribute("href").text
     end
     student[:profile_quote] = doc.css(".profile-quote").text
-    student[:bio] = doc.css(".description-holder").text
+    student[:bio] = doc.css(".description-holder").text.strip
     student[:blog] = "#{profile_url}"
-    student
-    #puts student
+    #student
+    puts student
   end
 
 end
 #puts Scraper.scrape_index_page("https://learn-co-curriculum.github.io/student-scraper-test-page/index.html")
-#Scraper.scrape_profile_page("https://learn-co-curriculum.github.io/student-scraper-test-page/students/ryan-johnson.html")
+Scraper.scrape_profile_page("https://learn-co-curriculum.github.io/student-scraper-test-page/students/ryan-johnson.html")
