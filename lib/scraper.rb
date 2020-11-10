@@ -32,6 +32,7 @@ class Scraper
       doc.css(".social-icon-container a").each do |a|
        #binding.pry
         key = a.attribute("href").text.split(/https:\/\/w*\.?/)[1]
+        binding.pry
         key = key.split(/\.com\/\w+/)[0]
         key = key.to_sym
         student[key] = a.attribute("href").text
