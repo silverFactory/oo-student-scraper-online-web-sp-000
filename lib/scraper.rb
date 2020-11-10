@@ -34,6 +34,7 @@ class Scraper
       student[key] = a.attribute("href").text
     end
     student[:profile_quote] = doc.css(".profile-quote").text
+    student[:profile_quote]
     student[:bio] = doc.css(".description-holder").text.strip
     student[:blog] = "#{profile_url}"
     #student
