@@ -18,7 +18,7 @@ class Scraper
         student = {}
         student[:name] = s.css(".student-name").text
         student[:location] = s.css(".student-location").text
-        student[:profile_url] = students.css("a").attribute("href")
+        student[:profile_url] = students.css("div.student-card a").attribute("href")
         info << student
     end
     info
