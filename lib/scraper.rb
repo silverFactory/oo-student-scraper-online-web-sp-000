@@ -35,6 +35,7 @@ class Scraper
     end
     student[:profile_quote] = doc.css(".profile-quote").text
     student[:bio] = doc.css(".description-holder").text
+    student[:blog] = "#{profile_url}"
     puts student
   end
 
