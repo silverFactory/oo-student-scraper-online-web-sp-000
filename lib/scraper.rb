@@ -27,7 +27,8 @@ class Scraper
   def self.scrape_profile_page(profile_url)
     doc = Nokogiri::HTML(open(profile_url))
     student = {}
-    if doc.css(".social-icon-container a") == true
+    binding.pry
+    if doc.css(".social-icon-container a")
       doc.css(".social-icon-container a").each do |a|
        #binding.pry
         key = a.attribute("href").text.split(/https:\/\/w*\.?/)[1]
