@@ -1,6 +1,7 @@
 require 'open-uri'
 require 'nokogiri'
 require 'pry'
+# s.css(".student-name").text
 
 class Scraper
 
