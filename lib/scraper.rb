@@ -3,6 +3,7 @@ require 'nokogiri'
 require 'pry'
 # s.css(".student-name").text
 # s.css(".student-location").text
+#students.css("a").attribute("href")
 
 class Scraper
 
