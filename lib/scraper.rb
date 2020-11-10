@@ -13,13 +13,13 @@ class Scraper
     html = open(index_url)
     doc = Nokogiri::HTML(html)
     students = doc.css(".student-card")
-    students.map do |s|
+    info = students.map do |s|
       student = {}
       student[:name] = s.css(".student-name").text
       student[:location] = s.css(".student-location").text
       student[:profile_url] = students.css("a").attribute("href")
     end
-
+    info
   end
 
   def self.scrape_profile_page(profile_url)
