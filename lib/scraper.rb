@@ -16,7 +16,7 @@ class Scraper
     students.map do |s|
       student = {}
       student[:name] = s.css(".student-name").text
-      # student[:location] = s.css(".student-location").text
+      student[:location] = s.css(".student-location").text
       # student[:profile_url] = students.css("a").attribute("href")
     end
   end
