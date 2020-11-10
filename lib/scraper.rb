@@ -8,7 +8,6 @@ require 'pry'
 # urls = links.map { |e|  puts "#{e[:href]}"}
 
 class Scraper
-
   def self.scrape_index_page(index_url)
     html = open(index_url)
     doc = Nokogiri::HTML(html)
@@ -27,11 +26,8 @@ class Scraper
   def self.scrape_profile_page(profile_url)
     doc = Nokogiri::HTML(open(profile_url))
     student = {}
-    #binding.pry
       doc.css(".social-icon-container a").each do |a|
-       #binding.pry
         key = a.attribute("href").text.split(/https:\/\/w*\.?/)[1]
-        #binding.pry
         if key != nil
           key = key.split(/\.com\/\w+/)[0]
           key = key.to_sym
@@ -43,9 +39,7 @@ class Scraper
     student[:profile_quote] = doc.css(".profile-quote").text
     student[:bio] = doc.css("p").text
     student
-  #  puts student
   end
-
 end
 #puts Scraper.scrape_index_page("https://learn-co-curriculum.github.io/student-scraper-test-page/index.html")
 #Scraper.scrape_profile_page("https://learn-co-curriculum.github.io/student-scraper-test-page/students/ryan-johnson.html")
