@@ -25,8 +25,9 @@ class Scraper
   end
 
   def self.scrape_profile_page(profile_url)
+    doc = Nokogiri::HTML(open(profile_url))
 
   end
 
 end
-puts Scraper.scrape_index_page("https://learn-co-curriculum.github.io/student-scraper-test-page/index.html")
+#puts Scraper.scrape_index_page("https://learn-co-curriculum.github.io/student-scraper-test-page/index.html")
