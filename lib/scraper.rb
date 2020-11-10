@@ -38,8 +38,8 @@ class Scraper
   #  student[:profile_quote]
     student[:bio] = doc.css(".description-holder").text.strip
     student[:blog] = "#{profile_url}"
-  #  student
-    puts student
+    student
+  #  puts student
   end
 
 end
