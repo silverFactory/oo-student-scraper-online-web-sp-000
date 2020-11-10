@@ -11,6 +11,7 @@ class Scraper
     doc = Nokogiri::HTML(html)
     students = doc.css(".student-card")
     links = students.xpath("//a")
+    urls = links.map { |e|  puts "#{e[:href]}"}
     # students.each do |s|
     #   puts s.css("div.student-card")
     # end
